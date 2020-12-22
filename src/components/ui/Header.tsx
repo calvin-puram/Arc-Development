@@ -118,7 +118,12 @@ const useStyles = makeStyles((theme: any) => ({
 
 interface Props {
   children?: React.ReactElement;
-}
+  value: number;
+  selectedIndex: number;
+  setValue(el:number): void;
+  setSelectedIndex(el:number): void;
+} 
+
 
 const ElevationScroll = (props: Props) => {
   const { children } = props;
@@ -133,12 +138,11 @@ const ElevationScroll = (props: Props) => {
 };
 
 const Header = (props: Props) => {
+  const {value, selectedIndex, setValue, setSelectedIndex} = props;
   const classes = useStyles();
-  const [value, setValue] = useState(0);
   //@ts-ignore
   const iOS = process.browser && /iPad|iPhone|iPod/.test(navigator.userAgent);
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
-  const [selectedIndex, setSelectedIndex] = useState(1);
   const theme = useTheme();
   const matches = useMediaQuery(theme.breakpoints.down("md"));
   const [openDrawer, setOpenDrawer] = useState(false);
@@ -213,14 +217,14 @@ const Header = (props: Props) => {
         }
         break;
       case "/contact":
-        if (value !== 3) {
-          setValue(3);
+        if (value !== 4) {
+          setValue(4);
         }
         break;
       default:
         break;
     }
-  }, [value]);
+  }, [value, setSelectedIndex, setValue]);
 
   const TabsContent: any = (
     <>
