@@ -41,12 +41,12 @@ const restMenu = [
 const useStyles = makeStyles((theme: any) => ({
   toolbarMargin: {
     ...theme.mixins.toolbar,
-    marginBottom: "3em",
+    paddingBottom: "3em",
     [theme.breakpoints.down("md")]: {
-      marginBottom: "2em",
+      paddingBottom: "2em",
     },
     [theme.breakpoints.down("xs")]: {
-      marginBottom: "1.25em",
+      paddingBottom: "1.25em",
     },
   },
   logo: {
@@ -68,10 +68,13 @@ const useStyles = makeStyles((theme: any) => ({
   },
   button: {
     ...theme.typography.estimate,
-    borderRadius: "50px",
+    borderRadius: "10px",
     marginLeft: "50px",
     marginRight: "25px",
     height: "40px",
+    "&:hover": {
+        backgroundColor: theme.palette.secondary.light,
+    }
   },
   buttonContainer: {
     padding: 0,
