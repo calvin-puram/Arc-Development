@@ -4,26 +4,31 @@ import Grid from "@material-ui/core/Grid";
 import Button from "@material-ui/core/Button";
 import { makeStyles } from "@material-ui/core/styles";
 import Typography from "@material-ui/core/Typography";
-import Card from '@material-ui/core/Card';
-import CardContent from '@material-ui/core/CardContent';
+import Card from "@material-ui/core/Card";
+import CardContent from "@material-ui/core/CardContent";
 
 import animationData from "../animations/landinganimation/data";
 import ButtonArrow from "./ui/ButtonArrow";
 import customsoftwareIcon from "../assets/Custom Software Icon.svg";
 import mobileappsIcon from "../assets/mobileIcon.svg";
 import websitesIcon from "../assets/websiteIcon.svg";
-import revolutionBackground from '../assets/repeatingBackground.svg'
+import revolutionBackground from "../assets/repeatingBackground.svg";
+import infoBackground from "../assets/infoBackground.svg";
 
 const useStyles = makeStyles((theme: any) => ({
   hero: {
-    minHeight: "auto",
+    minHeight: "100vh",
     paddingLeft: "1rem",
     margin: "0px",
     backgroundColor: theme.palette.common.blue,
     paddingTop: "2em",
+    [theme.breakpoints.down("md")]: {
+      minHeight: 'auto' 
+    },
     [theme.breakpoints.down("sm")]: {
       paddingLeft: "0px",
       paddingTop: "3rem",
+      
     },
   },
   animation: {
@@ -72,7 +77,14 @@ const useStyles = makeStyles((theme: any) => ({
   },
   heroContent: {
     minWidth: "23.2em",
-    paddingBottom: '1rem',
+    paddingBottom: "1rem",
+    paddingTop: "6rem",
+    [theme.breakpoints.down("md")]: {
+      paddingTop: "3rem",
+    },
+    [theme.breakpoints.down("sm")]: {
+      paddingTop: "1rem",
+    },
   },
   customSoftwareWrapper: {
     margin: "1rem",
@@ -113,41 +125,77 @@ const useStyles = makeStyles((theme: any) => ({
     },
   },
   mobileWrapper: {
-      marginTop: '2rem'
+    marginTop: "2rem",
   },
   cardWrapper: {
-    height: '80vh',
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
+    height: "80vh",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
     backgroundImage: `url(${revolutionBackground})`,
-    backgroundRepeat: 'no-repeat',
-    backgroundSize: 'cover',
-    backgroundPosition: 'center',
-    marginTop: '2rem',
-    marginBottom: '2rem'
+    backgroundRepeat: "no-repeat",
+    backgroundSize: "cover",
+    backgroundPosition: "center",
+    marginTop: "2rem",
+    marginBottom: "2rem",
   },
   card: {
-    margin: 'auto',
-    width: '50%',
+    margin: "auto",
+    width: "50%",
     boxShadow: theme.shadows[10],
     borderRadius: 15,
-    [theme.breakpoints.down('md')]: {
-      width: '80%'
+    [theme.breakpoints.down("md")]: {
+      width: "80%",
     },
-    [theme.breakpoints.down('sm')]: {
-      width: '90%'
-    }
+    [theme.breakpoints.down("sm")]: {
+      width: "90%",
+    },
   },
   cardContent: {
-    height: 'auto',
-    textAlign: 'center',
-    paddingTop: '2rem',
-    paddingBottom: '2rem',
+    height: "auto",
+    textAlign: "center",
+    paddingTop: "2rem",
+    paddingBottom: "2rem",
   },
   cardText: {
-    marginTop: '1rem',
-    textAlign: 'center'
+    marginTop: "1rem",
+    textAlign: "center",
+    [theme.breakpoints.down("sm")]: {
+      marginTop: "0.5rem",
+    },
+  },
+  infoWrapper: {
+    height: "80vh",
+    marginBottom: "2rem",
+    marginTop: "2rem",
+    backgroundImage: `url(${infoBackground})`,
+    backgroundRepeat: "no-repeat",
+    backgroundSize: "cover",
+    backgroundPosition: "center",
+    display: "flex",
+    justifyContent: "center",
+    [theme.breakpoints.down("sm")]: {
+      height: "auto",
+    },
+  },
+  infoContent: {
+    padding: "2rem",
+    [theme.breakpoints.down("sm")]: {
+      paddingLeft: "1rem",
+      paddingRight: "1rem",
+      alignItems: "center",
+      flexDirection: "column",
+      textAlign: "center",
+    },
+  },
+  contactSection: {
+    [theme.breakpoints.down("sm")]: {
+      marginTop: "2rem",
+    },
+  },
+  infoText: {
+    paddingTop: '1rem',
+    paddingBottom: '1rem',
   }
 }));
 const LandingPage = () => {
@@ -209,7 +257,7 @@ const LandingPage = () => {
           alignItems="center"
           className={classes.customSoftwareWrapper}
         >
-          <Grid item className={classes.customSoftwareContent} >
+          <Grid item className={classes.customSoftwareContent}>
             <Typography variant="h4">Custom Software Development</Typography>
             <Typography
               variant="subtitle1"
@@ -235,20 +283,20 @@ const LandingPage = () => {
             </Button>
           </Grid>
 
-          <Grid item className={classes.customSoftwareIcon} >
+          <Grid item className={classes.customSoftwareIcon}>
             <img src={customsoftwareIcon} alt="custom software icon" />
           </Grid>
         </Grid>
       </Grid>
 
       <Grid item className={classes.mobileWrapper}>
-        <Grid container
+        <Grid
+          container
           direction="row"
           justify="flex-end"
-          
-          className={classes.customSoftwareWrapper}>
-          
-          <Grid item className={classes.customSoftwareContent} >
+          className={classes.customSoftwareWrapper}
+        >
+          <Grid item className={classes.customSoftwareContent}>
             <Typography variant="h4">Mobile App Development</Typography>
             <Typography
               variant="subtitle1"
@@ -273,13 +321,13 @@ const LandingPage = () => {
             </Button>
           </Grid>
 
-          <Grid item className={classes.customSoftwareIcon} >
+          <Grid item className={classes.customSoftwareIcon}>
             <img src={mobileappsIcon} alt="moble app icon" />
           </Grid>
         </Grid>
       </Grid>
 
-       <Grid item className={classes.mobileWrapper}>
+      <Grid item className={classes.mobileWrapper}>
         <Grid
           container
           direction="row"
@@ -287,7 +335,7 @@ const LandingPage = () => {
           alignItems="center"
           className={classes.customSoftwareWrapper}
         >
-          <Grid item className={classes.customSoftwareContent} >
+          <Grid item className={classes.customSoftwareContent}>
             <Typography variant="h4">Websites Development</Typography>
             <Typography
               variant="subtitle1"
@@ -312,7 +360,7 @@ const LandingPage = () => {
             </Button>
           </Grid>
 
-          <Grid item className={classes.customSoftwareIcon} >
+          <Grid item className={classes.customSoftwareIcon}>
             <img src={websitesIcon} alt="website icon" />
           </Grid>
         </Grid>
@@ -320,29 +368,80 @@ const LandingPage = () => {
       {/* ****Revolution Section**** */}
       <Grid item className={classes.cardWrapper}>
         <Card className={classes.card}>
-          <CardContent >
-            <Grid container direction="column" justify="center" alignItems="center" className={classes.cardContent}>
+          <CardContent>
+            <Grid
+              container
+              direction="column"
+              justify="center"
+              alignItems="center"
+              className={classes.cardContent}
+            >
               <Grid item>
                 <Typography variant="h3">The Revolution</Typography>
               </Grid>
               <Grid item>
-                <Typography variant="subtitle1"  className={classes.cardText}>Visionary insights coupled with cutting-edge technology is a recipe for revolution</Typography>
+                <Typography variant="subtitle1" className={classes.cardText}>
+                  Visionary insights coupled with cutting-edge technology is a
+                  recipe for revolution
+                </Typography>
                 <Button
-              variant="outlined"
-              className={classes.learnMoreCustomSoftware}
-            >
-              Learn More{" "}
-              <ButtonArrow
-                height="10"
-                width="10"
-                fill="#0B72B9"
-                classItem={classes.buttonArrow}
-              />
-            </Button>
+                  variant="outlined"
+                  className={classes.learnMoreCustomSoftware}
+                >
+                  Learn More{" "}
+                  <ButtonArrow
+                    height="10"
+                    width="10"
+                    fill="#0B72B9"
+                    classItem={classes.buttonArrow}
+                  />
+                </Button>
               </Grid>
             </Grid>
           </CardContent>
         </Card>
+      </Grid>
+      {/* ****Information Section**** */}
+      <Grid item className={classes.infoWrapper}>
+        <Grid
+          container
+          direction="row"
+          justify="space-between"
+          alignItems="center"
+          className={classes.infoContent}
+        >
+          <Grid item>
+            <Typography variant="h4">About Us</Typography>
+            <Typography variant="subtitle2" className={classes.infoText}>
+              Let's get personal
+            </Typography>
+            <Button variant="outlined" className={classes.learnMoreHero}>
+                  Learn More{" "}
+                  <ButtonArrow
+                    height="15"
+                    width="15"
+                    fill="#fff"
+                    classItem={classes.buttonArrow}
+                  />
+                </Button>
+          </Grid>
+
+          <Grid item className={classes.contactSection}>
+            <Typography variant="h4">Contact Us</Typography>
+            <Typography variant="subtitle2" className={classes.infoText}>
+              Say hello
+            </Typography>
+            <Button variant="outlined" className={classes.learnMoreHero}>
+                  Learn More{" "}
+                  <ButtonArrow
+                    height="15"
+                    width="15"
+                    fill="#fff"
+                    classItem={classes.buttonArrow}
+                  />
+                </Button>
+          </Grid>
+        </Grid>
       </Grid>
     </Grid>
   );
