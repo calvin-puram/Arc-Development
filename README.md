@@ -7,6 +7,8 @@
 
 A High Fidelity Frontend Design reactjs (ongoing)
 
+![arc development](./public/img/arc.png)
+
 
 
 ## Project Breakdown

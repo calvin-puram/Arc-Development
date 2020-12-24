@@ -133,7 +133,7 @@ const LandingPage = () => {
         <Grid container direction="row" justify="flex-end" alignItems="center">
           <Grid item sm className={classes.heroContent}>
             <Typography variant="h2" align="center">
-              Bringing West Coast Technology <br /> To The Westwest
+              Bringing West Coast Technology <br /> To The Midwest
             </Typography>
             <Grid
               container
