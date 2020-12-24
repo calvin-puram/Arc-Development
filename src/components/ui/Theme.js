@@ -42,7 +42,7 @@ export default createMuiTheme({
     h3: {
       fontFamily: "Pacifico",
       fontSize: "2.5rem",
-      color: 'white'
+      color: arcBlue
     },
     h4: {
       fontFamily: "Raleway",

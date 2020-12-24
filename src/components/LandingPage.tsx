@@ -4,12 +4,15 @@ import Grid from "@material-ui/core/Grid";
 import Button from "@material-ui/core/Button";
 import { makeStyles } from "@material-ui/core/styles";
 import Typography from "@material-ui/core/Typography";
+import Card from '@material-ui/core/Card';
+import CardContent from '@material-ui/core/CardContent';
 
 import animationData from "../animations/landinganimation/data";
 import ButtonArrow from "./ui/ButtonArrow";
 import customsoftwareIcon from "../assets/Custom Software Icon.svg";
 import mobileappsIcon from "../assets/mobileIcon.svg";
 import websitesIcon from "../assets/websiteIcon.svg";
+import revolutionBackground from '../assets/repeatingBackground.svg'
 
 const useStyles = makeStyles((theme: any) => ({
   hero: {
@@ -76,7 +79,6 @@ const useStyles = makeStyles((theme: any) => ({
 
     maxWidth: "100%",
     [theme.breakpoints.down("sm")]: {
-    //   width: "90%",
       margin: "auto",
       textAlign: "center",
     },
@@ -112,6 +114,40 @@ const useStyles = makeStyles((theme: any) => ({
   },
   mobileWrapper: {
       marginTop: '2rem'
+  },
+  cardWrapper: {
+    height: '80vh',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundImage: `url(${revolutionBackground})`,
+    backgroundRepeat: 'no-repeat',
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+    marginTop: '2rem',
+    marginBottom: '2rem'
+  },
+  card: {
+    margin: 'auto',
+    width: '50%',
+    boxShadow: theme.shadows[10],
+    borderRadius: 15,
+    [theme.breakpoints.down('md')]: {
+      width: '80%'
+    },
+    [theme.breakpoints.down('sm')]: {
+      width: '90%'
+    }
+  },
+  cardContent: {
+    height: 'auto',
+    textAlign: 'center',
+    paddingTop: '2rem',
+    paddingBottom: '2rem',
+  },
+  cardText: {
+    marginTop: '1rem',
+    textAlign: 'center'
   }
 }));
 const LandingPage = () => {
@@ -280,6 +316,33 @@ const LandingPage = () => {
             <img src={websitesIcon} alt="website icon" />
           </Grid>
         </Grid>
+      </Grid>
+      {/* ****Revolution Section**** */}
+      <Grid item className={classes.cardWrapper}>
+        <Card className={classes.card}>
+          <CardContent >
+            <Grid container direction="column" justify="center" alignItems="center" className={classes.cardContent}>
+              <Grid item>
+                <Typography variant="h3">The Revolution</Typography>
+              </Grid>
+              <Grid item>
+                <Typography variant="subtitle1"  className={classes.cardText}>Visionary insights coupled with cutting-edge technology is a recipe for revolution</Typography>
+                <Button
+              variant="outlined"
+              className={classes.learnMoreCustomSoftware}
+            >
+              Learn More{" "}
+              <ButtonArrow
+                height="10"
+                width="10"
+                fill="#0B72B9"
+                classItem={classes.buttonArrow}
+              />
+            </Button>
+              </Grid>
+            </Grid>
+          </CardContent>
+        </Card>
       </Grid>
     </Grid>
   );
