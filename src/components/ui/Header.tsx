@@ -39,15 +39,18 @@ const restMenu = [
 ];
 
 const useStyles = makeStyles((theme: any) => ({
-  toolbarMargin: {
-    ...theme.mixins.toolbar,
-    paddingBottom: "3em",
-    [theme.breakpoints.down("md")]: {
-      paddingBottom: "2em",
-    },
-    [theme.breakpoints.down("xs")]: {
-      paddingBottom: "1.25em",
-    },
+  // toolbarMargin: {
+  //   // ...theme.mixins.toolbar,
+  //   paddingBottom: "3em",
+  //   [theme.breakpoints.down("md")]: {
+  //     paddingBottom: "7em",
+  //   },
+  //   [theme.breakpoints.down("xs")]: {
+  //     paddingBottom: "5.25em",
+  //   },
+  // },
+  listMargin: {
+    marginTop: '5rem'
   },
   logo: {
     height: "7em",
@@ -312,7 +315,7 @@ const Header = (props: Props) => {
         onOpen={() => setOpenDrawer(true)}
         classes={{ paper: classes.drawer }}
       >
-      <div className={classes.toolbarMargin} />
+      <div className={classes.listMargin} />
         <List component="nav" aria-label="side navigation" disablePadding>
           {[...menuOptions, ...options, ...restMenu].map((option, index) => (
             <ListItem
@@ -371,7 +374,7 @@ const Header = (props: Props) => {
           </AppBar>
         </ElevationScroll>
       </CssBaseline>
-      <div className={classes.toolbarMargin}></div>
+      {/* <div className={classes.toolbarMargin}></div> */}
     </div>
   );
 };

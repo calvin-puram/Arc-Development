@@ -77,12 +77,11 @@ export default createMuiTheme({
     },
     learnButton: {
       borderColor: arcBlue,
-      borderWidth: 2,
-      textTransform: "none",
       color: arcBlue,
-      borderRadius: 50,
-      fontFamily: "Roboto",
-      fontWeight: "bold"
+      borderWidth: 2,
+      textTransform: 'none',
+      borderRadius: 10,
+      fontWeight: 'bold',
     }
   },
   overrides: {
