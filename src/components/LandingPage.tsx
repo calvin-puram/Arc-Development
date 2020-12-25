@@ -97,10 +97,8 @@ const useStyles = makeStyles((theme: any) => ({
   },
   homeWrapper: {
     marginTop: "3rem",
-    marginBottom: "3rem",
     [theme.breakpoints.down("sm")]: {
       marginTop: "2rem",
-      marginBottom: "2rem",
     },
   },
   specialText: {
@@ -166,8 +164,6 @@ const useStyles = makeStyles((theme: any) => ({
   },
   infoWrapper: {
     height: "80vh",
-    marginBottom: "2rem",
-    marginTop: "2rem",
     backgroundImage: `url(${infoBackground})`,
     backgroundRepeat: "no-repeat",
     backgroundSize: "cover",
