@@ -6,6 +6,7 @@ import Header from "./ui/Header";
 import Theme from "./ui/Theme";
 import Footer from './ui/Footer'
 import LandingPage from './LandingPage'
+import Services from './Services';
 
 function App() {
   const [selectedIndex, setSelectedIndex] = useState(1);
@@ -16,7 +17,7 @@ function App() {
         <Header selectedIndex={selectedIndex} setSelectedIndex={setSelectedIndex} value={value} setValue={setValue}/>
         <Switch>
           <Route exact path="/" component={LandingPage} />
-          <Route path="/services" component={() => <h1>Services</h1>} />
+          <Route path="/services" component={Services} />
           <Route path="/customsoftware" component={() => <h1>Custom Software</h1>} />
           <Route path="/mobileapps" component={() => <h1>Mobile Apps</h1>} />
           <Route path="/websites" component={() => <h1>Websites</h1>} />

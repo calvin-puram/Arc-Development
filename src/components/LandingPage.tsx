@@ -254,7 +254,7 @@ const LandingPage = () => {
           className={classes.customSoftwareWrapper}
         >
           <Grid item className={classes.customSoftwareContent}>
-            <Typography variant="h4">Custom Software Development</Typography>
+            <Typography variant="h6">Custom Software Development</Typography>
             <Typography
               variant="subtitle1"
               className={classes.customsoftwareSubtitle1}
@@ -280,7 +280,7 @@ const LandingPage = () => {
           </Grid>
 
           <Grid item className={classes.customSoftwareIcon}>
-            <img src={customsoftwareIcon} alt="custom software icon" />
+            <img src={customsoftwareIcon} alt="custom software icon" width="250em"/>
           </Grid>
         </Grid>
       </Grid>
@@ -293,7 +293,7 @@ const LandingPage = () => {
           className={classes.customSoftwareWrapper}
         >
           <Grid item className={classes.customSoftwareContent}>
-            <Typography variant="h4">Mobile App Development</Typography>
+            <Typography variant="h6">Mobile App Development</Typography>
             <Typography
               variant="subtitle1"
               className={classes.customsoftwareSubtitle1}
@@ -318,7 +318,7 @@ const LandingPage = () => {
           </Grid>
 
           <Grid item className={classes.customSoftwareIcon}>
-            <img src={mobileappsIcon} alt="moble app icon" />
+            <img src={mobileappsIcon} alt="moble app icon" width="250em"/>
           </Grid>
         </Grid>
       </Grid>
@@ -332,7 +332,7 @@ const LandingPage = () => {
           className={classes.customSoftwareWrapper}
         >
           <Grid item className={classes.customSoftwareContent}>
-            <Typography variant="h4">Websites Development</Typography>
+            <Typography variant="h6">Websites Development</Typography>
             <Typography
               variant="subtitle1"
               className={classes.customsoftwareSubtitle1}
@@ -357,7 +357,7 @@ const LandingPage = () => {
           </Grid>
 
           <Grid item className={classes.customSoftwareIcon}>
-            <img src={websitesIcon} alt="website icon" />
+            <img src={websitesIcon} alt="website icon" width="250em"/>
           </Grid>
         </Grid>
       </Grid>
